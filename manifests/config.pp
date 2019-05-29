@@ -4,7 +4,7 @@ class tcpwrappers::config inherits tcpwrappers {
     ensure => 'present',
     owner  => 'root',
     group  => 'root',
-    mode   => '0644',
+    mode   => $tcpwrappers::hosts_allow_filemode,
   }
 
   concat::fragment{ '/etc/hosts.allow header':
@@ -17,7 +17,7 @@ class tcpwrappers::config inherits tcpwrappers {
     ensure => 'present',
     owner  => 'root',
     group  => 'root',
-    mode   => '0644',
+    mode   => $tcpwrappers::hosts_deny_filemode,
   }
 
   concat::fragment{ '/etc/hosts.deny header':

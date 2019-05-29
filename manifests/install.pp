@@ -6,5 +6,4 @@ class tcpwrappers::install inherits tcpwrappers {
       ensure => $tcpwrappers::package_ensure,
     }
   }
-
 }
